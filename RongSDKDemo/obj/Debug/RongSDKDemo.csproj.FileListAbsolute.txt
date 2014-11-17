@@ -1,0 +1,8 @@
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\bin\Debug\RongSDKDemo.exe.config
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\bin\Debug\RongSDKDemo.exe
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\bin\Debug\RongSDKDemo.pdb
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\bin\Debug\RongCloudServerSDK.dll
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\bin\Debug\RongCloudServerSDK.pdb
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\obj\Debug\RongSDKDemo.csprojResolveAssemblyReference.cache
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\obj\Debug\RongSDKDemo.exe
+C:\Users\xugang\documents\visual studio 2012\Projects\RongCloudServerSDK\RongSDKDemo\obj\Debug\RongSDKDemo.pdb
