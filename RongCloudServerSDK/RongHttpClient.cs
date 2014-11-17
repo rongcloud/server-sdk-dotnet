@@ -52,9 +52,9 @@ namespace io.rong
 
             byte[] byteArray = Encoding.UTF8.GetBytes(this.postStr);
 
-            byte[] responseArray = responseArray = myWebClient.UploadData(this.methodUrl, "POST", byteArray);
+            byte[] responseArray = myWebClient.UploadData(this.methodUrl, "POST", byteArray);
 
-            return Encoding.ASCII.GetString(responseArray);
+            return Encoding.UTF8.GetString(responseArray);
 
         }
         /// <summary>  
