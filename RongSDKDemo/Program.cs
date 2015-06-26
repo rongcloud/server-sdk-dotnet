@@ -12,35 +12,55 @@ namespace RongSDKDemo
         static void Main(string[] args)
         {
             String retstr = null;
-            //retstr=RongCloudServer.GetToken("e0x9wycfx7flq", "TESTSECRET", "232424", "xugang", "http://www.qqw21.com/article/UploadPic/2012-11/201211259378560.jpg");
-            //String retstr = RongCloudServer.GetToken("z3v5yqkbv8v30", "aL1VbnQdzNII8v", "232424", "xugang", "http://www.qqw21.com/article/UploadPic/2012-11/201211259378560.jpg");
+            String appKey = "uwd1c0sxdlx91";
+            String appSecret = "hhetmryhVm";
+            retstr = RongCloudServer.GetToken(appKey, appSecret, "232424", "xugang", "http://www.qqw21.com/article/UploadPic/2012-11/201211259378560.jpg");
+            Console.WriteLine("getToken: " + retstr);
+            Console.ReadKey();
 
-            //retstr = RongCloudServer.JoinGroup("e0x9wycfx7flq", "TESTSECRET", "232424", "group001","wsw");
+            retstr = RongCloudServer.JoinGroup(appKey, appSecret, "232424", "group001","wsw");
+            Console.WriteLine("joinGroup: " + retstr);
+            Console.ReadKey();
 
-            //string[] array = { "group[group004]=name"};
+            string[] arrId = { "group001", "group002", "group003" };
+            string[] arrName = {"测试 01", "测试 02", "测试 03"};
+            retstr = RongCloudServer.syncGroup(appKey, appSecret, "42424", arrId, arrName );
+            Console.WriteLine("syncGroup: " + retstr);
+            Console.ReadKey();
 
-            //retstr = RongCloudServer.syncGroup("e0x9wycfx7flq", "TESTSECRET", "42424",array );
+            retstr = RongCloudServer.DismissGroup(appKey, appSecret, "42424", "group001");
+            Console.WriteLine("dismissgroup: " + retstr);
+            Console.ReadKey();
 
-            //retstr = RongCloudServer.DismissGroup("e0x9wycfx7flq", "TESTSECRET", "42424", "group0013");
+            retstr = RongCloudServer.PublishMessage(appKey, appSecret, "2191", "2191", "RC:TxtMsg", "{\"content\":\"c#hello\"}");
+            Console.WriteLine("PublishMsg: "  + retstr);
+            Console.ReadKey();
 
-           retstr = RongCloudServer.PublishMessage("e0x9wycfx7flq", "TESTSECRET", "2191", "2191", "RC:TxtMsg", "{\"content\":\"c#hello\"}");
+            retstr = RongCloudServer.BroadcastMessage(appKey, appSecret, "2191", "RC:TxtMsg", "{\"content\":\"c#hello\"}");
+            Console.WriteLine("Broad: " + retstr);
+            Console.ReadKey();
 
-            //retstr = RongCloudServer.BroadcastMessage("e0x9wycfx7flq", "TESTSECRET", "2191", "RC:TxtMsg", "{\"content\":\"c#hello\"}");
+            retstr = RongCloudServer.JoinGroup(appKey, appSecret, "423424", "dwef", "dwef");
+            Console.WriteLine("JoinGroup: " + retstr);
+            Console.ReadKey();
 
-            //retstr = RongCloudServer.JoinGroup("e0x9wycfx7flq", "TESTSECRET", "423424", "dwef", "dwef");
+            retstr = RongCloudServer.CreateChatroom(appKey, appSecret, arrId, arrName);
+            Console.WriteLine("createChat: " + retstr);
+            Console.ReadKey();
 
-           // string[] array = { "chatroom[id10001]=name1001"};
-            //string[] array = { "chatroomId=id1001" };
+            retstr = RongCloudServer.DestroyChatroom(appKey, appSecret, new String[]{"001", "002"});
+            Console.WriteLine("Destroy: " + retstr);
+            Console.ReadKey();
 
-            //retstr = RongCloudServer.CreateChatroom("e0x9wycfx7flq", "TESTSECRET", array);
-            //retstr = RongCloudServer.DestroyChatroom("e0x9wycfx7flq", "TESTSECRET", array);
+            string[] aaa = { "group002", "group003" };
 
-            //string[] aaa={"group002"};
-            //retstr = RongCloudServer.queryChatroom("e0x9wycfx7flq", "TESTSECRET",aaa);
-            
-            Console.WriteLine(retstr);
+            retstr = RongCloudServer.queryChatroom(appKey, appSecret, aaa);
+            Console.WriteLine("queryChatroom: " + retstr);
 
+            Console.ReadKey();
 
+            Console.WriteLine("接口测试结束！")
+            Console.ReadKey();
         }
     }
 }

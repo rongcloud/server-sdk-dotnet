@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Security.Cryptography;
 using System.Web;
+using System.IO;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
@@ -40,21 +41,65 @@ namespace io.rong
             //ServicePointManager.ServerCertificateValidationCallback += ValidateRemoteCertificate;
             //ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
 
-            WebClient myWebClient = new WebClient();
+            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(this.methodUrl);
 
-            myWebClient.Headers.Add("App-Key", this.appkey);
-            myWebClient.Headers.Add("Nonce", nonce);
-            myWebClient.Headers.Add("Timestamp", timestamp);
+            myRequest.Method = "POST";
+            myRequest.ContentType = "application/x-www-form-urlencoded";
 
-            myWebClient.Headers.Add("Signature", signature);
+            myRequest.Headers.Add("App-Key", this.appkey);
+            myRequest.Headers.Add("Nonce", nonce);
+            myRequest.Headers.Add("Timestamp", timestamp);
+            myRequest.Headers.Add("Signature", signature);
+            myRequest.ReadWriteTimeout = 30 * 1000;
 
-            myWebClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+            byte[] data = Encoding.UTF8.GetBytes(this.postStr);
+            myRequest.ContentLength = this.postStr.Length;
 
-            byte[] byteArray = Encoding.UTF8.GetBytes(this.postStr);
+            Stream newStream = myRequest.GetRequestStream();
 
-            byte[] responseArray = myWebClient.UploadData(this.methodUrl, "POST", byteArray);
+            // Send the data.
+            newStream.Write(data, 0, data.Length);
+            newStream.Close();
 
-            return Encoding.UTF8.GetString(responseArray);
+            HttpWebResponse myResponse = null;
+            try
+            {
+                myResponse = (HttpWebResponse)myRequest.GetResponse();
+                StreamReader reader = new StreamReader(myResponse.GetResponseStream(), Encoding.UTF8);
+
+                string content = reader.ReadToEnd();
+                return content;
+            }
+            //异常请求
+            catch (WebException e)
+            {
+                myResponse = (HttpWebResponse)e.Response;
+                using (Stream errData = myResponse.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(errData))
+                    {
+                        string text = reader.ReadToEnd();
+
+                        return text;
+                    }
+                }
+            }
+            
+            //WebClient myWebClient = new WebClient();
+
+            //myWebClient.Headers.Add("App-Key", this.appkey);
+            //myWebClient.Headers.Add("Nonce", nonce);
+            //myWebClient.Headers.Add("Timestamp", timestamp);
+
+            //myWebClient.Headers.Add("Signature", signature);
+
+            //myWebClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+
+            //byte[] byteArray = Encoding.UTF8.GetBytes(this.postStr);
+
+            //byte[] responseArray = myWebClient.UploadData(this.methodUrl, "POST", byteArray);
+
+            //return Encoding.UTF8.GetString(responseArray);
 
         }
         /// <summary>  

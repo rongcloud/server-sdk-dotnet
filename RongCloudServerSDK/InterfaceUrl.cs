@@ -15,7 +15,7 @@ namespace io.rong
         public static String quitGroupUrl = server_addr + "/group/quit.json";
         public static String dismissUrl = server_addr + "/group/dismiss.json";
         public static String syncGroupUrl = server_addr + "/group/sync.json";
-        public static String SendMsgUrl = server_addr + "/message/publish.json";
+        public static String sendMsgUrl = server_addr + "/message/publish.json";
         public static String broadcastUrl = server_addr + "/message/broadcast.json";
         public static String createChatroomUrl = server_addr + "/chatroom/create.json";
         public static String destroyChatroomUrl = server_addr + "/chatroom/destroy.json";
