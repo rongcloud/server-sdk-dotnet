@@ -8,7 +8,7 @@ namespace io.rong
 {
     class InterfaceUrl
     {
-        public static String server_addr = "https://api.cn.rong.io";
+        public static String server_addr = "https://api.cn.ronghub.com";
 
         public static String getTokenUrl = server_addr+"/user/getToken.json";
         public static String joinGroupUrl = server_addr + "/group/join.json";
