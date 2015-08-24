@@ -59,7 +59,7 @@ namespace RongSDKDemo
 
             Console.ReadKey();
 
-            Console.WriteLine("接口测试结束！")
+            Console.WriteLine("接口测试结束！");
             Console.ReadKey();
         }
     }
