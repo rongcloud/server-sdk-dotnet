@@ -156,7 +156,7 @@ namespace io.rong
 
             String postStr = buildQueryStr(dicList);
 
-            RongHttpClient client = new RongHttpClient(appkey, appSecret, InterfaceUrl.broadcastUrl, postStr);
+            RongHttpClient client = new RongHttpClient(appkey, appSecret, InterfaceUrl.sendMsgUrl, postStr);
 
             return client.ExecutePost();
         }
