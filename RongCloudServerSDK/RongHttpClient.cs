@@ -53,7 +53,7 @@ namespace io.rong
             myRequest.ReadWriteTimeout = 30 * 1000;
 
             byte[] data = Encoding.UTF8.GetBytes(this.postStr);
-            myRequest.ContentLength = this.postStr.Length;
+            myRequest.ContentLength = data.Length;
 
             Stream newStream = myRequest.GetRequestStream();
 
