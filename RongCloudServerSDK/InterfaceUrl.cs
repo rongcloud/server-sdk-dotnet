@@ -16,6 +16,7 @@ namespace io.rong
         public static String dismissUrl = server_addr + "/group/dismiss.json";
         public static String syncGroupUrl = server_addr + "/group/sync.json";
         public static String sendMsgUrl = server_addr + "/message/publish.json";
+        public static String sendSysMsgUrl = server_addr + "/message/system/publish.json";
         public static String broadcastUrl = server_addr + "/message/broadcast.json";
         public static String createChatroomUrl = server_addr + "/chatroom/create.json";
         public static String destroyChatroomUrl = server_addr + "/chatroom/destroy.json";
@@ -27,6 +28,7 @@ namespace io.rong
         //public static String dismissUrl = server_addr + "/group/dismiss.xml";
         //public static String syncGroupUrl = server_addr + "/group/sync.xml";
         //public static String SendMsgUrl = server_addr + "/message/publish.xml";
+        //public static String sendSysMsgUrl = server_addr + "/message/system/publish.xml";
         //public static String broadcastUrl = server_addr + "/message/broadcast.xml";
         //public static String createChatroomUrl = server_addr + "/chatroom/create.xml";
         //public static String destroyChatroomUrl = server_addr + "/chatroom/destroy.xml";
