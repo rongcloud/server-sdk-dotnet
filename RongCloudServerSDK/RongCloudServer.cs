@@ -137,7 +137,7 @@ namespace io.rong
 
         
         /// <summary>
-        /// 
+        /// 发送二人消息
         /// </summary>
         /// <param name="appkey"></param>
         /// <param name="appSecret"></param>
@@ -148,6 +148,7 @@ namespace io.rong
         /// <returns></returns>
         public static String PublishMessage(String appkey, String appSecret, String fromUserId, String toUserId, String objectName, String content)
         {
+            //此数据结构不适用多个toUserId情况,请注意
             Dictionary<String, String> dicList = new Dictionary<String, String>();
             dicList.Add("fromUserId", fromUserId);
             dicList.Add("toUserId", toUserId);
