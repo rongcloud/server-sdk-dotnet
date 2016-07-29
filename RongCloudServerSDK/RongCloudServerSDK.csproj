@@ -7,7 +7,7 @@
     <ProjectGuid>{E9A5242E-1DA9-4B52-8299-E15F51D6ADFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RongCloudServerSDK</RootNamespace>
+    <RootNamespace>io.rong</RootNamespace>
     <AssemblyName>RongCloudServerSDK</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
@@ -43,9 +47,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InterfaceUrl.cs" />
+    <Compile Include="models\CmdMsgMessage.cs" />
+    <Compile Include="models\CmdNtfMessage.cs" />
+    <Compile Include="models\ContactNtfMessage.cs" />
+    <Compile Include="models\FormatType.cs" />
+    <Compile Include="models\ImgMessage.cs" />
+    <Compile Include="models\InfoNtfMessage.cs" />
+    <Compile Include="models\LBSMessage.cs" />
+    <Compile Include="models\Message.cs" />
+    <Compile Include="models\ProfileNtfMessage.cs" />
+    <Compile Include="models\TxtMessage.cs" />
+    <Compile Include="models\UserInfo.cs" />
+    <Compile Include="models\VoiceMessage.cs" />
     <Compile Include="RongCloudServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RongHttpClient.cs" />
+    <Compile Include="util\RongHttpClient.cs" />
+    <Compile Include="util\RongHttpResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
