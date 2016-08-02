@@ -1,0 +1,15 @@
+﻿{
+  "dependencies": {
+    "Autofac": "4.0.0-rc2-240",
+    "FSharp.Core": "4.0.0.1",
+    "NUnit": "2.6.2",
+    "System.Buffers": "4.0.0",
+    "System.Collections.Immutable": "1.1.37"
+  },
+  "frameworks": {
+    "net45": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

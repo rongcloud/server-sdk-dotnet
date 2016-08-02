@@ -14,3 +14,13 @@ F:\Project\dotnet\RongSDKDemo\bin\Debug\RongCloudServerSDK.pdb
 F:\Project\dotnet\RongSDKDemo\obj\Debug\RongSDKDemo.csprojResolveAssemblyReference.cache
 F:\Project\dotnet\RongSDKDemo\obj\Debug\RongSDKDemo.exe
 F:\Project\dotnet\RongSDKDemo\obj\Debug\RongSDKDemo.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\RongSDKDemo.exe.config
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\obj\Debug\RongSDKDemo.exe
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\obj\Debug\RongSDKDemo.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\RongSDKDemo.exe
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\RongSDKDemo.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\RongCloudServerSDK.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\Newtonsoft.Json.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\RongCloudServerSDK.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Debug\Newtonsoft.Json.xml
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\obj\Debug\RongSDKDemo.csprojResolveAssemblyReference.cache

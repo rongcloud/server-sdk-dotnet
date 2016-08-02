@@ -1,0 +1,7 @@
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\bin\Release\RongCloudServerSDK.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\bin\Release\RongCloudServerSDK.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\bin\Release\Newtonsoft.Json.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\bin\Release\Newtonsoft.Json.xml
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\obj\Release\RongCloudServerSDK.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\obj\Release\RongCloudServerSDK.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongCloudServerSDK\obj\Release\RongCloudServerSDK.pdb

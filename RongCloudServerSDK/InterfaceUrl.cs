@@ -65,6 +65,10 @@ namespace io.rong {
         public static String stopstopDistributionUrl = server_addr + "/chatroom/message/stopDistribution";
         public static String resumeDistributionUrl = server_addr + "/chatroom/message/resumeDistribution";
 
+        // 消息历史记录服务
+        public static String getHistoryMsgUrl = server_addr + "/message/history";
+        public static String delHistoryMsgUrl = server_addr + "/message/history/delete";
+
         //public static String getTokenUrl = server_addr + "/user/getToken.xml";
         //public static String joinGroupUrl = server_addr + "/group/join.xml";
         //public static String quitGroupUrl = server_addr + "/group/quit.xml";

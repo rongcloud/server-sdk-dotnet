@@ -11,8 +11,8 @@ namespace RongSDKDemo {
     class Program {
         static void Main(string[] args) {
             RongHttpResult retstr = null;
-            String appKey = "uwd1c0sxdlx91";
-            String appSecret = "hhetmryhVm";
+            String appKey = "cpj2xarlj0j1n";
+            String appSecret = "9NoxRmxRy3bF";
             RongCloudServer rongServer = RongCloudServer.getInstance(appKey, appSecret);
 
             String userId = "232424";
@@ -121,6 +121,10 @@ namespace RongSDKDemo {
 
             Console.WriteLine("publishTemplateMsg: " + rongServer.publishTemplateMsg(userId, toUserIds, msg1, values, new List<string>() { "push{c}", "push{c}" }, new List<string>() { "pushd", "pushd" }, 0).toString());
             Console.WriteLine("publishSysTemplateMsg: " + rongServer.publishSysTemplateMsg(userId, toUserIds, msg1, values, new List<string>() { "push{c}", "push{c}" }, new List<string>() { "pushd", "pushd" }).toString());
+            Console.ReadKey();
+
+            Console.WriteLine("getHistoryMsgUrl: " + rongServer.getHistoryMsgUrl("2016080112").toString());
+            Console.WriteLine("getHistoryMsgUrl: " + rongServer.delHistoryMsg("2016080112").toString());
             Console.ReadKey();
 
             Console.WriteLine("接口测试结束！");

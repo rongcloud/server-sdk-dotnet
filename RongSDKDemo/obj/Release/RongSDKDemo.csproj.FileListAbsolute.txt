@@ -1,0 +1,10 @@
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\RongSDKDemo.exe.config
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\RongSDKDemo.exe
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\RongSDKDemo.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\RongCloudServerSDK.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\Newtonsoft.Json.dll
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\RongCloudServerSDK.pdb
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\bin\Release\Newtonsoft.Json.xml
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\obj\Release\RongSDKDemo.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\obj\Release\RongSDKDemo.exe
+\\Mac\Home\Desktop\server-sdk-dotnet\RongSDKDemo\obj\Release\RongSDKDemo.pdb

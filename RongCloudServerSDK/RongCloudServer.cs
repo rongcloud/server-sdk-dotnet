@@ -926,5 +926,35 @@ namespace io.rong {
 
             return client.ExecutePost();
         }
+
+        /// <summary>
+        /// 消息历史记录下载地址获取 
+        /// </summary>
+        /// <param name="date">指定北京时间某天某小时，格式为2014010101</param>
+        /// <returns></returns>
+        public RongHttpResult getHistoryMsgUrl(String date, FormatType format = null) {
+            Dictionary<String, Object> dicList = new Dictionary<String, Object>();
+            dicList.Add("date", date);
+            String postStr = buildQueryStr(dicList);
+
+            RongHttpClient client = new RongHttpClient(appKey, appSecret, InterfaceUrl.getHistoryMsgUrl, postStr, format);
+
+            return client.ExecutePost();
+        }
+
+        /// <summary>
+        /// 消息历史记录删除
+        /// </summary>
+        /// <param name="date">指定北京时间某天某小时，格式为2014010101</param>
+        /// <returns></returns>
+        public RongHttpResult delHistoryMsg(String date, FormatType format = null) {
+            Dictionary<String, Object> dicList = new Dictionary<String, Object>();
+            dicList.Add("date", date);
+            String postStr = buildQueryStr(dicList);
+
+            RongHttpClient client = new RongHttpClient(appKey, appSecret, InterfaceUrl.delHistoryMsgUrl, postStr, format);
+
+            return client.ExecutePost();
+        }
     }
 }
