@@ -1,5 +1,0 @@
-F:\Project\dotnet\RongCloudServerSDK\bin\Debug\RongCloudServerSDK.dll
-F:\Project\dotnet\RongCloudServerSDK\bin\Debug\RongCloudServerSDK.pdb
-F:\Project\dotnet\RongCloudServerSDK\obj\Debug\RongCloudServerSDK.csprojResolveAssemblyReference.cache
-F:\Project\dotnet\RongCloudServerSDK\obj\Debug\RongCloudServerSDK.dll
-F:\Project\dotnet\RongCloudServerSDK\obj\Debug\RongCloudServerSDK.pdb
