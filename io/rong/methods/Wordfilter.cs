@@ -32,7 +32,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut add(String word) {
+		public CodeSuccessReslut add(String word) {
 
 			if(word == null) {
 				throw new ArgumentNullException("Paramer 'word' is required");
@@ -51,7 +51,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return ListWordfilterReslut
 	 	 **/
-		public  ListWordfilterReslut getList() {
+		public ListWordfilterReslut getList() {
 
 	    	String postStr = "";
 	    	
@@ -65,7 +65,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut delete(String word) {
+		public CodeSuccessReslut delete(String word) {
 
 			if(word == null) {
 				throw new ArgumentNullException("Paramer 'word' is required");

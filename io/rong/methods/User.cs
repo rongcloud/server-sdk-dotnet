@@ -34,7 +34,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return TokenReslut
 	 	 **/
-		public  TokenReslut getToken(String userId, String name, String portraitUri) {
+		public TokenReslut getToken(String userId, String name, String portraitUri) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -66,7 +66,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut refresh(String userId, String name, String portraitUri) {
+		public CodeSuccessReslut refresh(String userId, String name, String portraitUri) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -88,7 +88,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CheckOnlineReslut
 	 	 **/
-		public  CheckOnlineReslut checkOnline(String userId) {
+		public CheckOnlineReslut checkOnline(String userId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -109,7 +109,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut block(String userId, int minute) {
+		public CodeSuccessReslut block(String userId, int minute) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -134,7 +134,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut unBlock(String userId) {
+		public CodeSuccessReslut unBlock(String userId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -153,7 +153,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return QueryBlockUserReslut
 	 	 **/
-		public  QueryBlockUserReslut queryBlock() {
+		public QueryBlockUserReslut queryBlock() {
 
 	    	String postStr = "";
 	    	
@@ -168,7 +168,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut addBlacklist(String userId, String blackUserId) {
+		public CodeSuccessReslut addBlacklist(String userId, String blackUserId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -193,7 +193,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return QueryBlacklistUserReslut
 	 	 **/
-		public  QueryBlacklistUserReslut queryBlacklist(String userId) {
+		public QueryBlacklistUserReslut queryBlacklist(String userId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -214,7 +214,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut removeBlacklist(String userId, String blackUserId) {
+		public CodeSuccessReslut removeBlacklist(String userId, String blackUserId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");

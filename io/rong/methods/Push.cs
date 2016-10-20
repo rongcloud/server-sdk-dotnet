@@ -32,7 +32,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut setUserPushTag(UserTag userTag) {
+		public CodeSuccessReslut setUserPushTag(UserTag userTag) {
 
 			if(userTag == null) {
 				throw new ArgumentNullException("Paramer 'userTag' is required");
@@ -50,7 +50,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut broadcastPush(PushMessage pushMessage) {
+		public CodeSuccessReslut broadcastPush(PushMessage pushMessage) {
 
 			if(pushMessage == null) {
 				throw new ArgumentNullException("Paramer 'pushMessage' is required");

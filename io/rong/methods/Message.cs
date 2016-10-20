@@ -40,7 +40,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut publishPrivate(String fromUserId, String[] toUserId, VoiceMessage message, String pushContent, String pushData, String count, int verifyBlacklist, int isPersisted, int isCounted) {
+		public CodeSuccessReslut publishPrivate(String fromUserId, String[] toUserId, VoiceMessage message, String pushContent, String pushData, String count, int verifyBlacklist, int isPersisted, int isCounted) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -85,7 +85,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut publishTemplate(TemplateMessage templateMessage) {
+		public CodeSuccessReslut publishTemplate(TemplateMessage templateMessage) {
 
 			if(templateMessage == null) {
 				throw new ArgumentNullException("Paramer 'templateMessage' is required");
@@ -109,7 +109,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut PublishSystem(String fromUserId, String[] toUserId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
+		public CodeSuccessReslut PublishSystem(String fromUserId, String[] toUserId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -152,7 +152,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut publishSystemTemplate(TemplateMessage templateMessage) {
+		public CodeSuccessReslut publishSystemTemplate(TemplateMessage templateMessage) {
 
 			if(templateMessage == null) {
 				throw new ArgumentNullException("Paramer 'templateMessage' is required");
@@ -176,7 +176,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut publishGroup(String fromUserId, String[] toGroupId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
+		public CodeSuccessReslut publishGroup(String fromUserId, String[] toGroupId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -225,7 +225,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut publishDiscussion(String fromUserId, String toDiscussionId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
+		public CodeSuccessReslut publishDiscussion(String fromUserId, String toDiscussionId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -266,7 +266,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut publishChatroom(String fromUserId, String[] toChatroomId, TxtMessage message) {
+		public CodeSuccessReslut publishChatroom(String fromUserId, String[] toChatroomId, TxtMessage message) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -309,7 +309,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut broadcast(String fromUserId, TxtMessage message, String pushContent, String pushData, String os) {
+		public CodeSuccessReslut broadcast(String fromUserId, TxtMessage message, String pushContent, String pushData, String os) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -342,7 +342,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return HistoryMessageReslut
 	 	 **/
-		public  HistoryMessageReslut getHistory(String date) {
+		public HistoryMessageReslut getHistory(String date) {
 
 			if(date == null) {
 				throw new ArgumentNullException("Paramer 'date' is required");
@@ -362,7 +362,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut deleteMessage(String date) {
+		public CodeSuccessReslut deleteMessage(String date) {
 
 			if(date == null) {
 				throw new ArgumentNullException("Paramer 'date' is required");

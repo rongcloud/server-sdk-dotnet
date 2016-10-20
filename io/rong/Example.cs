@@ -16,8 +16,8 @@ using Newtonsoft.Json;
 namespace donet.io.rong {
     class Program {
         static void Main(string[] args) {
-            String appKey = "cpj2xarlj0j1n";
-            String appSecret = "9NoxRmxRy3bF";
+            String appKey = "appKey";
+            String appSecret = "secret";
             RongCloud rongcloud = RongCloud.getInstance(appKey, appSecret);
             JsonSerializer serializer = new JsonSerializer();
                         
@@ -278,6 +278,12 @@ namespace donet.io.rong {
 			Console.WriteLine("chatroom.destroy:  "+  chatroomdestroyResult.toString());
 			Console.ReadKey();
 
+			// 添加聊天室消息优先级方法 
+			String[] chatroomaddPriorityObjectName = {"RC:VcMsg","RC:ImgTextMsg","RC:ImgMsg"};
+			CodeSuccessReslut chatroomaddPriorityResult = rongcloud.chatroom.addPriority(chatroomaddPriorityObjectName );
+			Console.WriteLine("chatroom.addPriority:  "+  chatroomaddPriorityResult.toString());
+			Console.ReadKey();
+
 			// 添加聊天室白名单成员方法 
 			String[] chatroomaddWhiteListUserUserId = {"userId1","userId2","userId3","userId4","userId5"};
 			CodeSuccessReslut chatroomaddWhiteListUserResult = rongcloud.chatroom.addWhiteListUser("chatroomId",chatroomaddWhiteListUserUserId );
@@ -287,15 +293,15 @@ namespace donet.io.rong {
             
             Console.WriteLine("**************** push ****************");
 			// 添加 Push 标签方法 
-			String str46 = File.ReadAllText("./UserTag.json");
-            UserTag setUserPushTagUserTag = RongJsonUtil.JsonStringToObj<UserTag>(str46);
+			String str47 = File.ReadAllText("./UserTag.json");
+            UserTag setUserPushTagUserTag = RongJsonUtil.JsonStringToObj<UserTag>(str47);
             CodeSuccessReslut pushsetUserPushTagResult = rongcloud.push.setUserPushTag( setUserPushTagUserTag);
             Console.WriteLine("push.setUserPushTag:  "+  pushsetUserPushTagResult.toString());
 			Console.ReadKey();
 
 			// 广播消息方法（fromuserid 和 message为null即为不落地的push） 
-			String str47 = File.ReadAllText("./PushMessage.json");
-            PushMessage broadcastPushPushMessage = RongJsonUtil.JsonStringToObj<PushMessage>(str47);
+			String str48 = File.ReadAllText("./PushMessage.json");
+            PushMessage broadcastPushPushMessage = RongJsonUtil.JsonStringToObj<PushMessage>(str48);
             CodeSuccessReslut pushbroadcastPushResult = rongcloud.push.broadcastPush( broadcastPushPushMessage);
             Console.WriteLine("push.broadcastPush:  "+  pushbroadcastPushResult.toString());
 			Console.ReadKey();
@@ -303,7 +309,7 @@ namespace donet.io.rong {
             
             Console.WriteLine("**************** SMS ****************");
 			// 获取图片验证码方法 
-			SMSImageCodeReslut sMSgetImageCodeResult = rongcloud.sms.getImageCode(appKey);
+			SMSImageCodeReslut sMSgetImageCodeResult = rongcloud.sms.getImageCode("app-key");
 			Console.WriteLine("SMS.getImageCode:  "+  sMSgetImageCodeResult.toString());
 			Console.ReadKey();
 

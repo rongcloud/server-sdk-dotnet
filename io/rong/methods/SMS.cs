@@ -32,7 +32,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return SMSImageCodeReslut
 	 	 **/
-		public  SMSImageCodeReslut getImageCode(String appKey) {
+		public SMSImageCodeReslut getImageCode(String appKey) {
 
 			if(appKey == null) {
 				throw new ArgumentNullException("Paramer 'appKey' is required");
@@ -56,7 +56,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return SMSSendCodeReslut
 	 	 **/
-		public  SMSSendCodeReslut sendCode(String mobile, String templateId, String region, String verifyId, String verifyCode) {
+		public SMSSendCodeReslut sendCode(String mobile, String templateId, String region, String verifyId, String verifyCode) {
 
 			if(mobile == null) {
 				throw new ArgumentNullException("Paramer 'mobile' is required");
@@ -89,7 +89,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public  CodeSuccessReslut verifyCode(String sessionId, String code) {
+		public CodeSuccessReslut verifyCode(String sessionId, String code) {
 
 			if(sessionId == null) {
 				throw new ArgumentNullException("Paramer 'sessionId' is required");
