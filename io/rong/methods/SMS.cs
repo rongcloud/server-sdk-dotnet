@@ -32,7 +32,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return SMSImageCodeReslut
 	 	 **/
-		public SMSImageCodeReslut getImageCode(String appKey) {
+		public  SMSImageCodeReslut getImageCode(String appKey) {
 
 			if(appKey == null) {
 				throw new ArgumentNullException("Paramer 'appKey' is required");
@@ -56,7 +56,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return SMSSendCodeReslut
 	 	 **/
-		public SMSSendCodeReslut sendCode(String mobile, String templateId, String region, String verifyId, String verifyCode) {
+		public  SMSSendCodeReslut sendCode(String mobile, String templateId, String region, String verifyId, String verifyCode) {
 
 			if(mobile == null) {
 				throw new ArgumentNullException("Paramer 'mobile' is required");
@@ -87,9 +87,9 @@ namespace donet.io.rong.methods {
 	 	 * @param  sessionId:短信验证码唯一标识，在发送短信验证码方法，返回值中获取。（必传）
 	 	 * @param  code:短信验证码内容。（必传）
 		 *
-	 	 * @return CodeSuccessReslut
+	 	 * @return SMSVerifyCodeResult
 	 	 **/
-		public CodeSuccessReslut verifyCode(String sessionId, String code) {
+		public  SMSVerifyCodeResult verifyCode(String sessionId, String code) {
 
 			if(sessionId == null) {
 				throw new ArgumentNullException("Paramer 'sessionId' is required");
@@ -104,7 +104,7 @@ namespace donet.io.rong.methods {
 	    	postStr += "code=" + HttpUtility.UrlEncode(code == null ? "" : code,Encoding.UTF8) + "&";
 	    	postStr = postStr.Substring(0, postStr.LastIndexOf('&'));
 	    	
-          	return (CodeSuccessReslut) RongJsonUtil.JsonStringToObj<CodeSuccessReslut>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDSMSURI+"/verifyCode.json", postStr, "application/x-www-form-urlencoded" ));
+          	return (SMSVerifyCodeResult) RongJsonUtil.JsonStringToObj<SMSVerifyCodeResult>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDSMSURI+"/verifyCode.json", postStr, "application/x-www-form-urlencoded" ));
 		}
             
 	}

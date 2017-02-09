@@ -72,7 +72,7 @@ namespace donet.io.rong {
 			// 发送单聊消息方法（一个用户向另外一个用户发送消息，单条消息最大 128k。每分钟最多发送 6000 条信息，每次发送用户上限为 1000 人，如：一次发送 1000 人时，示为 1000 条消息。） 
 			String[] messagepublishPrivateToUserId = {"userId2","userid3","userId4"};
 			VoiceMessage messagepublishPrivateVoiceMessage = new VoiceMessage("hello","helloExtra",20L);
-			CodeSuccessReslut messagepublishPrivateResult = rongcloud.message.publishPrivate("userId1",messagepublishPrivateToUserId ,messagepublishPrivateVoiceMessage ,"thisisapush","{\"pushData\":\"hello\"}","4",0,0,0);
+			CodeSuccessReslut messagepublishPrivateResult = rongcloud.message.publishPrivate("userId1",messagepublishPrivateToUserId ,messagepublishPrivateVoiceMessage ,"thisisapush","{\"pushData\":\"hello\"}","4",0,0,0,0);
 			Console.WriteLine("message.publishPrivate:  "+  messagepublishPrivateResult.toString());
 			Console.ReadKey();
 
@@ -100,13 +100,13 @@ namespace donet.io.rong {
 			// 发送群组消息方法（以一个用户身份向群组发送消息，单条消息最大 128k.每秒钟最多发送 20 条消息，每次最多向 3 个群组发送，如：一次向 3 个群组发送消息，示为 3 条消息。） 
 			String[] messagepublishGroupToGroupId = {"groupId1","groupId2","groupId3"};
 			TxtMessage messagepublishGroupTxtMessage = new TxtMessage("hello","helloExtra");
-			CodeSuccessReslut messagepublishGroupResult = rongcloud.message.publishGroup("userId",messagepublishGroupToGroupId ,messagepublishGroupTxtMessage ,"thisisapush","{\"pushData\":\"hello\"}",1,1);
+			CodeSuccessReslut messagepublishGroupResult = rongcloud.message.publishGroup("userId",messagepublishGroupToGroupId ,messagepublishGroupTxtMessage ,"thisisapush","{\"pushData\":\"hello\"}",1,1,0);
 			Console.WriteLine("message.publishGroup:  "+  messagepublishGroupResult.toString());
 			Console.ReadKey();
 
 			// 发送讨论组消息方法（以一个用户身份向讨论组发送消息，单条消息最大 128k，每秒钟最多发送 20 条消息.） 
 			TxtMessage messagepublishDiscussionTxtMessage = new TxtMessage("hello","helloExtra");
-			CodeSuccessReslut messagepublishDiscussionResult = rongcloud.message.publishDiscussion("userId1","discussionId1",messagepublishDiscussionTxtMessage ,"thisisapush","{\"pushData\":\"hello\"}",1,1);
+			CodeSuccessReslut messagepublishDiscussionResult = rongcloud.message.publishDiscussion("userId1","discussionId1",messagepublishDiscussionTxtMessage ,"thisisapush","{\"pushData\":\"hello\"}",1,1,0);
 			Console.WriteLine("message.publishDiscussion:  "+  messagepublishDiscussionResult.toString());
 			Console.ReadKey();
 
@@ -272,16 +272,16 @@ namespace donet.io.rong {
 			Console.WriteLine("chatroom.rollbackBlockUser:  "+  chatroomrollbackBlockUserResult.toString());
 			Console.ReadKey();
 
-			// 销毁聊天室方法 
-			String[] chatroomdestroyChatroomId = {"chatroomId","chatroomId1","chatroomId2"};
-			CodeSuccessReslut chatroomdestroyResult = rongcloud.chatroom.destroy(chatroomdestroyChatroomId );
-			Console.WriteLine("chatroom.destroy:  "+  chatroomdestroyResult.toString());
-			Console.ReadKey();
-
 			// 添加聊天室消息优先级方法 
 			String[] chatroomaddPriorityObjectName = {"RC:VcMsg","RC:ImgTextMsg","RC:ImgMsg"};
 			CodeSuccessReslut chatroomaddPriorityResult = rongcloud.chatroom.addPriority(chatroomaddPriorityObjectName );
 			Console.WriteLine("chatroom.addPriority:  "+  chatroomaddPriorityResult.toString());
+			Console.ReadKey();
+
+			// 销毁聊天室方法 
+			String[] chatroomdestroyChatroomId = {"chatroomId","chatroomId1","chatroomId2"};
+			CodeSuccessReslut chatroomdestroyResult = rongcloud.chatroom.destroy(chatroomdestroyChatroomId );
+			Console.WriteLine("chatroom.destroy:  "+  chatroomdestroyResult.toString());
 			Console.ReadKey();
 
 			// 添加聊天室白名单成员方法 
@@ -319,7 +319,7 @@ namespace donet.io.rong {
 			Console.ReadKey();
 
 			// 验证码验证方法 
-			CodeSuccessReslut sMSverifyCodeResult = rongcloud.sms.verifyCode("2312312","2312312");
+			SMSVerifyCodeResult sMSverifyCodeResult = rongcloud.sms.verifyCode("2312312","2312312");
 			Console.WriteLine("SMS.verifyCode:  "+  sMSverifyCodeResult.toString());
 			Console.ReadKey();
 

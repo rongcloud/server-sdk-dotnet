@@ -34,7 +34,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut create(String[] userId, String groupId, String groupName) {
+		public  CodeSuccessReslut create(String[] userId, String groupId, String groupName) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -69,7 +69,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut sync(String userId, GroupInfo[] groupInfo) {
+		public  CodeSuccessReslut sync(String userId, GroupInfo[] groupInfo) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -101,7 +101,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut refresh(String groupId, String groupName) {
+		public  CodeSuccessReslut refresh(String groupId, String groupName) {
 
 			if(groupId == null) {
 				throw new ArgumentNullException("Paramer 'groupId' is required");
@@ -128,7 +128,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut join(String[] userId, String groupId, String groupName) {
+		public  CodeSuccessReslut join(String[] userId, String groupId, String groupName) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -162,7 +162,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return GroupUserQueryReslut
 	 	 **/
-		public GroupUserQueryReslut queryUser(String groupId) {
+		public  GroupUserQueryReslut queryUser(String groupId) {
 
 			if(groupId == null) {
 				throw new ArgumentNullException("Paramer 'groupId' is required");
@@ -183,7 +183,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut quit(String[] userId, String groupId) {
+		public  CodeSuccessReslut quit(String[] userId, String groupId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -214,7 +214,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut addGagUser(String userId, String groupId, String minute) {
+		public  CodeSuccessReslut addGagUser(String userId, String groupId, String minute) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -244,7 +244,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return ListGagGroupUserReslut
 	 	 **/
-		public ListGagGroupUserReslut lisGagUser(String groupId) {
+		public  ListGagGroupUserReslut lisGagUser(String groupId) {
 
 			if(groupId == null) {
 				throw new ArgumentNullException("Paramer 'groupId' is required");
@@ -265,7 +265,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut rollBackGagUser(String[] userId, String groupId) {
+		public  CodeSuccessReslut rollBackGagUser(String[] userId, String groupId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -295,7 +295,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut dismiss(String userId, String groupId) {
+		public  CodeSuccessReslut dismiss(String userId, String groupId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");

@@ -37,10 +37,11 @@ namespace donet.io.rong.methods {
 	 	 * @param  verifyBlacklist:是否过滤发送人黑名单列表，0 表示为不过滤、 1 表示为过滤，默认为 0 不过滤。（可选）
 	 	 * @param  isPersisted:当前版本有新的自定义消息，而老版本没有该自定义消息时，老版本客户端收到消息后是否进行存储，0 表示为不存储、 1 表示为存储，默认为 1 存储消息。（可选）
 	 	 * @param  isCounted:当前版本有新的自定义消息，而老版本没有该自定义消息时，老版本客户端收到消息后是否进行未读消息计数，0 表示为不计数、 1 表示为计数，默认为 1 计数，未读消息数增加 1。（可选）
+	 	 * @param  isIncludeSender:发送用户自已是否接收消息，0 表示为不接收，1 表示为接收，默认为 0 不接收。（可选）
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut publishPrivate(String fromUserId, String[] toUserId, VoiceMessage message, String pushContent, String pushData, String count, int verifyBlacklist, int isPersisted, int isCounted) {
+		public  CodeSuccessReslut publishPrivate(String fromUserId, String[] toUserId, VoiceMessage message, String pushContent, String pushData, String count, int verifyBlacklist, int isPersisted, int isCounted, int isIncludeSender) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -73,6 +74,7 @@ namespace donet.io.rong.methods {
             postStr += "verifyBlacklist=" + HttpUtility.UrlEncode(Convert.ToString(verifyBlacklist) == null ? "" : Convert.ToString(verifyBlacklist),Encoding.UTF8) + "&";
             postStr += "isPersisted=" + HttpUtility.UrlEncode(Convert.ToString(isPersisted) == null ? "" : Convert.ToString(isPersisted),Encoding.UTF8) + "&";
             postStr += "isCounted=" + HttpUtility.UrlEncode(Convert.ToString(isCounted) == null ? "" : Convert.ToString(isCounted),Encoding.UTF8) + "&";
+            postStr += "isIncludeSender=" + HttpUtility.UrlEncode(Convert.ToString(isIncludeSender) == null ? "" : Convert.ToString(isIncludeSender),Encoding.UTF8) + "&";
 	    	postStr = postStr.Substring(0, postStr.LastIndexOf('&'));
 	    	
           	return (CodeSuccessReslut) RongJsonUtil.JsonStringToObj<CodeSuccessReslut>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDURI+"/message/private/publish.json", postStr, "application/x-www-form-urlencoded" ));
@@ -85,7 +87,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut publishTemplate(TemplateMessage templateMessage) {
+		public  CodeSuccessReslut publishTemplate(TemplateMessage templateMessage) {
 
 			if(templateMessage == null) {
 				throw new ArgumentNullException("Paramer 'templateMessage' is required");
@@ -109,7 +111,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut PublishSystem(String fromUserId, String[] toUserId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
+		public  CodeSuccessReslut PublishSystem(String fromUserId, String[] toUserId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -152,7 +154,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut publishSystemTemplate(TemplateMessage templateMessage) {
+		public  CodeSuccessReslut publishSystemTemplate(TemplateMessage templateMessage) {
 
 			if(templateMessage == null) {
 				throw new ArgumentNullException("Paramer 'templateMessage' is required");
@@ -173,10 +175,11 @@ namespace donet.io.rong.methods {
 	 	 * @param  pushData:针对 iOS 平台为 Push 通知时附加到 payload 中，Android 客户端收到推送消息时对应字段名为 pushData。（可选）
 	 	 * @param  isPersisted:当前版本有新的自定义消息，而老版本没有该自定义消息时，老版本客户端收到消息后是否进行存储，0 表示为不存储、 1 表示为存储，默认为 1 存储消息。（可选）
 	 	 * @param  isCounted:当前版本有新的自定义消息，而老版本没有该自定义消息时，老版本客户端收到消息后是否进行未读消息计数，0 表示为不计数、 1 表示为计数，默认为 1 计数，未读消息数增加 1。（可选）
+	 	 * @param  isIncludeSender:发送用户自已是否接收消息，0 表示为不接收，1 表示为接收，默认为 0 不接收。（可选）
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut publishGroup(String fromUserId, String[] toGroupId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
+		public  CodeSuccessReslut publishGroup(String fromUserId, String[] toGroupId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted, int isIncludeSender) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -207,6 +210,7 @@ namespace donet.io.rong.methods {
 	    	postStr += "pushData=" + HttpUtility.UrlEncode(pushData == null ? "" : pushData,Encoding.UTF8) + "&";
             postStr += "isPersisted=" + HttpUtility.UrlEncode(Convert.ToString(isPersisted) == null ? "" : Convert.ToString(isPersisted),Encoding.UTF8) + "&";
             postStr += "isCounted=" + HttpUtility.UrlEncode(Convert.ToString(isCounted) == null ? "" : Convert.ToString(isCounted),Encoding.UTF8) + "&";
+            postStr += "isIncludeSender=" + HttpUtility.UrlEncode(Convert.ToString(isIncludeSender) == null ? "" : Convert.ToString(isIncludeSender),Encoding.UTF8) + "&";
 	    	postStr = postStr.Substring(0, postStr.LastIndexOf('&'));
 	    	
           	return (CodeSuccessReslut) RongJsonUtil.JsonStringToObj<CodeSuccessReslut>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDURI+"/message/group/publish.json", postStr, "application/x-www-form-urlencoded" ));
@@ -222,10 +226,11 @@ namespace donet.io.rong.methods {
 	 	 * @param  pushData:针对 iOS 平台为 Push 通知时附加到 payload 中，Android 客户端收到推送消息时对应字段名为 pushData.（可选）
 	 	 * @param  isPersisted:当前版本有新的自定义消息，而老版本没有该自定义消息时，老版本客户端收到消息后是否进行存储，0 表示为不存储、 1 表示为存储，默认为 1 存储消息.（可选）
 	 	 * @param  isCounted:当前版本有新的自定义消息，而老版本没有该自定义消息时，老版本客户端收到消息后是否进行未读消息计数，0 表示为不计数、 1 表示为计数，默认为 1 计数，未读消息数增加 1。（可选）
+	 	 * @param  isIncludeSender:发送用户自已是否接收消息，0 表示为不接收，1 表示为接收，默认为 0 不接收。（可选）
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut publishDiscussion(String fromUserId, String toDiscussionId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted) {
+		public  CodeSuccessReslut publishDiscussion(String fromUserId, String toDiscussionId, TxtMessage message, String pushContent, String pushData, int isPersisted, int isCounted, int isIncludeSender) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -252,6 +257,7 @@ namespace donet.io.rong.methods {
 	    	postStr += "pushData=" + HttpUtility.UrlEncode(pushData == null ? "" : pushData,Encoding.UTF8) + "&";
             postStr += "isPersisted=" + HttpUtility.UrlEncode(Convert.ToString(isPersisted) == null ? "" : Convert.ToString(isPersisted),Encoding.UTF8) + "&";
             postStr += "isCounted=" + HttpUtility.UrlEncode(Convert.ToString(isCounted) == null ? "" : Convert.ToString(isCounted),Encoding.UTF8) + "&";
+            postStr += "isIncludeSender=" + HttpUtility.UrlEncode(Convert.ToString(isIncludeSender) == null ? "" : Convert.ToString(isIncludeSender),Encoding.UTF8) + "&";
 	    	postStr = postStr.Substring(0, postStr.LastIndexOf('&'));
 	    	
           	return (CodeSuccessReslut) RongJsonUtil.JsonStringToObj<CodeSuccessReslut>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDURI+"/message/discussion/publish.json", postStr, "application/x-www-form-urlencoded" ));
@@ -266,7 +272,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut publishChatroom(String fromUserId, String[] toChatroomId, TxtMessage message) {
+		public  CodeSuccessReslut publishChatroom(String fromUserId, String[] toChatroomId, TxtMessage message) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -309,7 +315,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut broadcast(String fromUserId, TxtMessage message, String pushContent, String pushData, String os) {
+		public  CodeSuccessReslut broadcast(String fromUserId, TxtMessage message, String pushContent, String pushData, String os) {
 
 			if(fromUserId == null) {
 				throw new ArgumentNullException("Paramer 'fromUserId' is required");
@@ -342,7 +348,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return HistoryMessageReslut
 	 	 **/
-		public HistoryMessageReslut getHistory(String date) {
+		public  HistoryMessageReslut getHistory(String date) {
 
 			if(date == null) {
 				throw new ArgumentNullException("Paramer 'date' is required");
@@ -362,7 +368,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut deleteMessage(String date) {
+		public  CodeSuccessReslut deleteMessage(String date) {
 
 			if(date == null) {
 				throw new ArgumentNullException("Paramer 'date' is required");
