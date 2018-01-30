@@ -44,6 +44,7 @@ namespace donet.io.rong.util {
             } else {
                 myRequest.ContentType = contentType;
             }
+            myRequest.ProtocolVersion = HttpVersion.Version10; 
 
 
             myRequest.Headers.Add("App-Key", appkey);
