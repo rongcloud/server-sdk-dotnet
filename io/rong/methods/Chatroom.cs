@@ -32,7 +32,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut create(ChatRoomInfo[] chatRoomInfo) {
+		public  CodeSuccessReslut create(ChatRoomInfo[] chatRoomInfo) {
 
 			if(chatRoomInfo == null) {
 				throw new ArgumentNullException("Paramer 'chatRoomInfo' is required");
@@ -59,7 +59,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut join(String[] userId, String chatroomId) {
+		public  CodeSuccessReslut join(String[] userId, String chatroomId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -88,7 +88,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return ChatroomQueryReslut
 	 	 **/
-		public ChatroomQueryReslut query(String[] chatroomId) {
+		public  ChatroomQueryReslut query(String[] chatroomId) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
@@ -114,7 +114,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return ChatroomUserQueryReslut
 	 	 **/
-		public ChatroomUserQueryReslut queryUser(String chatroomId, String count, String order) {
+		public  ChatroomUserQueryReslut queryUser(String chatroomId, String count, String order) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
@@ -144,7 +144,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut stopDistributionMessage(String chatroomId) {
+		public  CodeSuccessReslut stopDistributionMessage(String chatroomId) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
@@ -164,7 +164,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut resumeDistributionMessage(String chatroomId) {
+		public  CodeSuccessReslut resumeDistributionMessage(String chatroomId) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
@@ -186,7 +186,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut addGagUser(String userId, String chatroomId, String minute) {
+		public  CodeSuccessReslut addGagUser(String userId, String chatroomId, String minute) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -216,7 +216,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return ListGagChatroomUserReslut
 	 	 **/
-		public ListGagChatroomUserReslut ListGagUser(String chatroomId) {
+		public  ListGagChatroomUserReslut ListGagUser(String chatroomId) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
@@ -237,7 +237,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut rollbackGagUser(String userId, String chatroomId) {
+		public  CodeSuccessReslut rollbackGagUser(String userId, String chatroomId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -264,7 +264,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut addBlockUser(String userId, String chatroomId, String minute) {
+		public  CodeSuccessReslut addBlockUser(String userId, String chatroomId, String minute) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -294,7 +294,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return ListBlockChatroomUserReslut
 	 	 **/
-		public ListBlockChatroomUserReslut getListBlockUser(String chatroomId) {
+		public  ListBlockChatroomUserReslut getListBlockUser(String chatroomId) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
@@ -315,7 +315,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut rollbackBlockUser(String userId, String chatroomId) {
+		public  CodeSuccessReslut rollbackBlockUser(String userId, String chatroomId) {
 
 			if(userId == null) {
 				throw new ArgumentNullException("Paramer 'userId' is required");
@@ -334,37 +334,13 @@ namespace donet.io.rong.methods {
 		}
             
         /**
-	 	 * 销毁聊天室方法 
-	 	 * 
-	 	 * @param  chatroomId:要销毁的聊天室 Id。（必传）
-		 *
-	 	 * @return CodeSuccessReslut
-	 	 **/
-		public CodeSuccessReslut destroy(String[] chatroomId) {
-
-			if(chatroomId == null) {
-				throw new ArgumentNullException("Paramer 'chatroomId' is required");
-			}
-			
-	    	String postStr = "";
-	    	for(int i = 0 ; i< chatroomId.Length; i++){
-			String child  = chatroomId[i];
-			postStr += "chatroomId=" + HttpUtility.UrlEncode(child, Encoding.UTF8) + "&";
-			}
-			
-	    	postStr = postStr.Substring(0, postStr.LastIndexOf('&'));
-	    	
-          	return (CodeSuccessReslut) RongJsonUtil.JsonStringToObj<CodeSuccessReslut>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDURI+"/chatroom/destroy.json", postStr, "application/x-www-form-urlencoded" ));
-		}
-            
-        /**
 	 	 * 添加聊天室消息优先级方法 
 	 	 * 
 	 	 * @param  objectName:低优先级的消息类型，每次最多提交 5 个，设置的消息类型最多不超过 20 个。（必传）
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut addPriority(String[] objectName) {
+		public  CodeSuccessReslut addPriority(String[] objectName) {
 
 			if(objectName == null) {
 				throw new ArgumentNullException("Paramer 'objectName' is required");
@@ -382,6 +358,30 @@ namespace donet.io.rong.methods {
 		}
             
         /**
+	 	 * 销毁聊天室方法 
+	 	 * 
+	 	 * @param  chatroomId:要销毁的聊天室 Id。（必传）
+		 *
+	 	 * @return CodeSuccessReslut
+	 	 **/
+		public  CodeSuccessReslut destroy(String[] chatroomId) {
+
+			if(chatroomId == null) {
+				throw new ArgumentNullException("Paramer 'chatroomId' is required");
+			}
+			
+	    	String postStr = "";
+	    	for(int i = 0 ; i< chatroomId.Length; i++){
+			String child  = chatroomId[i];
+			postStr += "chatroomId=" + HttpUtility.UrlEncode(child, Encoding.UTF8) + "&";
+			}
+			
+	    	postStr = postStr.Substring(0, postStr.LastIndexOf('&'));
+	    	
+          	return (CodeSuccessReslut) RongJsonUtil.JsonStringToObj<CodeSuccessReslut>(RongHttpClient.ExecutePost(appKey, appSecret, RongCloud.RONGCLOUDURI+"/chatroom/destroy.json", postStr, "application/x-www-form-urlencoded" ));
+		}
+            
+        /**
 	 	 * 添加聊天室白名单成员方法 
 	 	 * 
 	 	 * @param  chatroomId:聊天室中用户 Id，可提交多个，聊天室中白名单用户最多不超过 5 个。（必传）
@@ -389,7 +389,7 @@ namespace donet.io.rong.methods {
 		 *
 	 	 * @return CodeSuccessReslut
 	 	 **/
-		public CodeSuccessReslut addWhiteListUser(String chatroomId, String[] userId) {
+		public  CodeSuccessReslut addWhiteListUser(String chatroomId, String[] userId) {
 
 			if(chatroomId == null) {
 				throw new ArgumentNullException("Paramer 'chatroomId' is required");
