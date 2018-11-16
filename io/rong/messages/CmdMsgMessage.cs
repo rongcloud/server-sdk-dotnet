@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 通用命令通知消息。此类型消息没有 Push 通知。此类型消息没有 Push 通知，与通用命令通知消息的区别是不存储、不计数。
 	 *
 	 */
-	public class CmdMsgMessage  {
+    public class CmdMsgMessage :IMessage  {
 		[JsonProperty]
 		private String name = "";
 		[JsonProperty]

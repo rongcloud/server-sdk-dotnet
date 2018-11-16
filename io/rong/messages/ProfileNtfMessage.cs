@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 资料通知消息。此类型消息没有 Push 通知。
 	 *
 	 */
-	public class ProfileNtfMessage  {
+    public class ProfileNtfMessage:IMessage {
 		[JsonProperty]
 		private String operation = "";
 		[JsonProperty]

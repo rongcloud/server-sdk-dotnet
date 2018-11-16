@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 位置消息。
 	 *
 	 */
-	public class LBSMessage  {
+    public class LBSMessage:IMessage {
 		[JsonProperty]
 		private String content = "";
 		[JsonProperty]

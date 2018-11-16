@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 通用命令通知消息。此类型消息没有 Push 通知。
 	 *
 	 */
-	public class CmdNtfMessage  {
+    public class CmdNtfMessage :IMessage {
 		[JsonProperty]
 		private String name = "";
 		[JsonProperty]

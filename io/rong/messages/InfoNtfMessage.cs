@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 提示条（小灰条）通知消息。此类型消息没有 Push 通知。
 	 *
 	 */
-	public class InfoNtfMessage  {
+    public class InfoNtfMessage :IMessage {
 		[JsonProperty]
 		private String message = "";
 		[JsonProperty]

@@ -64,6 +64,7 @@
     <None Include="UserTag.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="io\rong\messages\IMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="io\rong\Example.cs" />
