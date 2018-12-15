@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 图文消息。
 	 *
 	 */
-	public class ImgTextMessage  {
+    public class ImgTextMessage : IMessage {
 		[JsonProperty]
 		private String content = "";
 		[JsonProperty]

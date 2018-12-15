@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 文本消息。
 	 *
 	 */
-	public class TxtMessage  {
+    public class TxtMessage :IMessage {
 		[JsonProperty]
 		private String content = "";
 		[JsonProperty]

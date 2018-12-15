@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 自定义消息
 	 *
 	 */
-	public class CustomTxtMessage  {
+    public class CustomTxtMessage :IMessage {
 		[JsonProperty]
 		private String content = "";
 		private  static  String TYPE = "RC:TxtMsg";

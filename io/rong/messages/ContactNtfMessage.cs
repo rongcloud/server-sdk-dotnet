@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 添加联系人消息。
 	 *
 	 */
-	public class ContactNtfMessage  {
+    public class ContactNtfMessage :IMessage  {
 		[JsonProperty]
 		private String operation = "";
 		[JsonProperty]

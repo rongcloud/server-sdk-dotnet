@@ -12,7 +12,7 @@ namespace donet.io.rong.messages {
 	 * 语音消息。
 	 *
 	 */
-	public class VoiceMessage  {
+    public class VoiceMessage :IMessage {
 		[JsonProperty]
 		private String content = "";
 		[JsonProperty]
