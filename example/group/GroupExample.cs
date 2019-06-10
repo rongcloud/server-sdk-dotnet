@@ -17,11 +17,11 @@ namespace io.rong.example.group
         /**
          * 此处替换成您的appKey
          * */
-        private static readonly String appKey = "pwe86ga5pwrj6";
+        private static readonly String appKey = "appKey";
         /**
          * 此处替换成您的appSecret
          * */
-        private static readonly String appSecret = "rb8fWki1mJcK";
+        private static readonly String appSecret = "appSecret";
         /**
          * 自定义api地址
          * */

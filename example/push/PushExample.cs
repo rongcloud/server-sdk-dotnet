@@ -15,11 +15,11 @@ namespace io.rong.example.push
         /**
      * 此处替换成您的appKey
      * */
-        private static String appKey = "pwe86ga5pwrj6";
+        private static String appKey = "appKey";
         /**
          * 此处替换成您的appSecret
          * */
-        private static String appSecret = "rb8fWki1mJcK";
+        private static String appSecret = "appSecret";
         /**
          * 自定义api地址
          * */
