@@ -1,0 +1,16 @@
+  {
+    "senderId": "Vu-oC0_LQ6kgPqltm_zYtI",
+    "objectName": "RC:TxtMsg",
+    "template": {
+      "content": ".NET{name}, 语文成绩 {score} 分 template"
+    },
+    "content": {
+      "uPj70HUrRSUk-ixtt7iIGc": {
+        "data": {
+          "{name}": "小明",
+          "{score}": "90"
+        },
+        "push": ".NET{name} 你的成绩出来了 template"
+      }
+    }
+  }
