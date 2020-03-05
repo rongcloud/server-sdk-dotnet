@@ -69,13 +69,15 @@ namespace io.rong.util
          **/
         private static JObject FromPath(String path)
         {
-            StreamReader file = System.IO.File.OpenText("jsonsource/" + path);
-            JsonTextReader reader = new JsonTextReader(file);
-            JObject jObject = (JObject)JToken.ReadFrom(reader);
-
-            //reader.Close();
-
-            return jObject;
+            var assembly = typeof(CommonUtil).GetTypeInfo().Assembly;
+            using (var stream = assembly.GetManifestResourceStream("ServerSDK.jsonsource." + path.Replace("/", ".")))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    JObject jObject = (JObject)JToken.ReadFrom(new JsonTextReader(reader));
+                    return jObject;
+                }
+            }
         }
 
         private static List<String> GetKeys(JToken jToken)
@@ -166,8 +168,9 @@ namespace io.rong.util
                                 Object result = null;
                                 if (null != m)
                                 {
-                                     result = m.Invoke(model, new Object[] { });
-                                } else
+                                    result = m.Invoke(model, new Object[] { });
+                                }
+                                else
                                 {
                                     result = propertyInfo.GetValue(model, null);
                                 }
@@ -609,7 +612,7 @@ namespace io.rong.util
                         text = response.Replace("users", "members");
                         if (text.Contains("whitlistMsgType"))
                         {
-                            text = text.Replace( "whitlistMsgType", "objNames");
+                            text = text.Replace("whitlistMsgType", "objNames");
                         }
                         if (path.Contains("gag") || path.Contains("block"))
                         {
