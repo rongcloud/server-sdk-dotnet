@@ -1,270 +1,159 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{8BCCEE67-2A37-4952-8D9B-9E413DA7A54A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>ServerSDK</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup>
-    <RootNamespace>io.rong</RootNamespace>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup>
-    <StartupObject>io.rong.example.push.PushExample</StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
-    <Win32Resource>
-    </Win32Resource>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <None Remove="jsonsource\chatroom\block\api.json" />
+    <None Remove="jsonsource\conversation\api.json" />
+    <None Remove="jsonsource\conversation\verify.json" />
+    <None Remove="jsonsource\message\api.json" />
+    <None Remove="jsonsource\message\chatroom\api.json" />
+    <None Remove="jsonsource\message\discussion\api.json" />
+    <None Remove="jsonsource\message\group\api.json" />
+    <None Remove="jsonsource\message\history\api.json" />
+    <None Remove="jsonsource\message\recall\api.json" />
+    <None Remove="jsonsource\message\system\api.json" />
+    <None Remove="jsonsource\message\TemplateMessage.json" />
+    <None Remove="jsonsource\message\verify.json" />
+    <None Remove="jsonsource\message\_private\api.json" />
+    <None Remove="jsonsource\push\api.json" />
+    <None Remove="jsonsource\push\verify.json" />
+    <None Remove="jsonsource\sensitiveword\api.json" />
+    <None Remove="jsonsource\sensitiveword\verify.json" />
+    <None Remove="jsonsource\user\blacklist\api.json" />
+    <None Remove="jsonsource\user\block\api.json" />
+    <None Remove="jsonsource\user\online-status\api.json" />
+    <None Remove="jsonsource\user\tag\api.json" />
+    <None Remove="jsonsource\user\verify.json" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="example\push\PushExample.cs" />
-    <Compile Include="example\user\BlackListExample.cs" />
-    <Compile Include="example\user\BlockExample.cs" />
-    <Compile Include="example\user\UserExample.cs" />
-    <Compile Include="methods\message\Message.cs" />
-    <Compile Include="methods\push\Broadcast.cs" />
-    <Compile Include="methods\push\Push.cs" />
-    <Compile Include="methods\user\tag\Tag.cs" />
-    <Compile Include="methods\user\blacklist\Blacklist.cs" />
-    <Compile Include="methods\user\block\Block.cs" />
-    <Compile Include="methods\user\onlineStatus\OnlineStatus.cs" />
-    <Compile Include="methods\user\User.cs" />
-    <Compile Include="models\BlockUsers.cs" />
-    <Compile Include="messages\BaseMessage.cs" />
-    <Compile Include="models\message\MessageModel.cs" />
-    <Compile Include="models\push\Audience.cs" />
-    <Compile Include="models\push\Message.cs" />
-    <Compile Include="models\push\BroadcastModel.cs" />
-    <Compile Include="models\push\BroadcastPushPublicPart.cs" />
-    <Compile Include="models\push\Notification.cs" />
-    <Compile Include="models\push\PlatformNotification.cs" />
-    <Compile Include="models\push\PushModel.cs" />
-    <Compile Include="models\response\PushResult.cs" />
-    <Compile Include="models\user\tag\TagModel.cs" />
-    <Compile Include="models\response\BlockUserResult.cs" />
-    <Compile Include="models\response\CheckOnlineResult.cs" />
-    <Compile Include="models\response\GroupUser.cs" />
-    <Compile Include="models\response\GroupUserQueryResult.cs" />
-    <Compile Include="models\response\ListGagGroupUserResult.cs" />
-    <Compile Include="models\response\ListWordfilterResult.cs" />
-    <Compile Include="models\response\ResponseResult.cs" />
-    <Compile Include="models\response\TagListResult.cs" />
-    <Compile Include="models\response\TokenResult.cs" />
-    <Compile Include="models\user\BlockUser.cs" />
-    <Compile Include="models\CheckMethod.cs" />
-    <Compile Include="models\response\BlackListResult.cs" />
-    <Compile Include="models\response\UserList.cs" />
-    <Compile Include="models\Result.cs" />
-    <Compile Include="models\Templates.cs" />
-    <Compile Include="models\user\UserModel.cs" />
-    <Compile Include="RongCloud.cs" />
-    <Compile Include="util\CodeUtil.cs" />
-    <Compile Include="util\CommonUtil.cs" />
-    <Compile Include="util\HostType.cs" />
-    <Compile Include="util\RongHttpClient.cs" />
-    <Compile Include="util\RongJsonUtil.cs" />
-    <None Include="app.config" />
-    <None Include="jsonsource\broadcast\api.json" />
-    <None Include="jsonsource\broadcast\verify.json" />
-    <None Include="jsonsource\chatroom\api.json" />
-    <None Include="jsonsource\chatroom\block\api.json" />
-    <None Include="jsonsource\chatroom\demotion\api.json" />
-    <None Include="jsonsource\chatroom\distribute\api.json" />
-    <None Include="jsonsource\chatroom\global-gag\api.json" />
-    <None Include="jsonsource\chatroom\keepalive\api.json" />
-    <None Include="jsonsource\chatroom\member-gag\api.json" />
-    <None Include="jsonsource\chatroom\verify.json" />
-    <None Include="jsonsource\chatroom\whitelist\message\api.json" />
-    <None Include="jsonsource\chatroom\whitelist\user\api.json" />
-    <None Include="jsonsource\conversation\api.json" />
-    <None Include="jsonsource\conversation\verify.json" />
-    <None Include="jsonsource\group\api.json" />
-    <None Include="jsonsource\group\gag\api.json" />
-    <None Include="jsonsource\group\verify.json" />
-    <None Include="jsonsource\message\api.json" />
-    <None Include="jsonsource\message\chatroom\api.json" />
-    <None Include="jsonsource\message\discussion\api.json" />
-    <None Include="jsonsource\message\group\api.json" />
-    <None Include="jsonsource\message\history\api.json" />
-    <None Include="jsonsource\message\recall\api.json" />
-    <None Include="jsonsource\message\system\api.json" />
-    <None Include="jsonsource\message\TemplateMessage.json" />
-    <None Include="jsonsource\message\verify.json" />
-    <None Include="jsonsource\message\_private\api.json" />
-    <None Include="jsonsource\PushMessage.json" />
-    <None Include="jsonsource\push\api.json" />
-    <None Include="jsonsource\user\tag\api.json" />
-    <None Include="jsonsource\push\verify.json" />
-    <None Include="jsonsource\sensitiveword\api.json" />
-    <None Include="jsonsource\sensitiveword\verify.json" />
-    <None Include="jsonsource\TemplateMessage.json" />
-    <None Include="jsonsource\UserTag.json" />
-    <None Include="jsonsource\user\api.json" />
-    <None Include="jsonsource\user\blacklist\api.json" />
-    <None Include="jsonsource\user\block\api.json" />
-    <None Include="jsonsource\user\online-status\api.json" />
-    <None Include="jsonsource\user\verify.json" />
-    <None Include="packages.config" />
+    <EmbeddedResource Include="jsonsource\broadcast\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\broadcast\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\block\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\demotion\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\distribute\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\global-gag\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\keepalive\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\member-gag\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\whitelist\message\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\chatroom\whitelist\user\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\conversation\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\conversation\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\group\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\group\gag\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\group\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\chatroom\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\discussion\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\group\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\history\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\recall\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\system\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\TemplateMessage.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\message\_private\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\PushMessage.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\push\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\push\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\sensitiveword\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\sensitiveword\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\TemplateMessage.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\UserTag.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\user\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\user\blacklist\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\user\block\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\user\online-status\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\user\tag\api.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jsonsource\user\verify.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include=".vs\" />
-    <Folder Include="Properties\" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="models\message\BroadcastMessage.cs" />
-    <Compile Include="models\message\ChatroomMessage.cs" />
-    <Compile Include="models\message\DiscussionMessage.cs" />
-    <Compile Include="models\message\GroupMessage.cs" />
-    <Compile Include="models\message\MentionedInfo.cs" />
-    <Compile Include="models\message\MentionMessage.cs" />
-    <Compile Include="models\message\MentionMessageContent.cs" />
-    <Compile Include="models\message\PrivateMessage.cs" />
-    <Compile Include="models\message\RecallMessage.cs" />
-    <Compile Include="models\message\SystemMessage.cs" />
-    <Compile Include="models\message\TemplateMessage.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="messages\CmdMsgMessage.cs" />
-    <Compile Include="messages\CmdNtfMessage.cs" />
-    <Compile Include="messages\ContactNtfMessage.cs" />
-    <Compile Include="messages\CustomTxtMessage.cs" />
-    <Compile Include="messages\ImgMessage.cs" />
-    <Compile Include="messages\ImgTextMessage.cs" />
-    <Compile Include="messages\InfoNtfMessage.cs" />
-    <Compile Include="messages\LBSMessage.cs" />
-    <Compile Include="messages\ProfileNtfMessage.cs" />
-    <Compile Include="messages\TxtMessage.cs" />
-    <Compile Include="messages\VoiceMessage.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="example\messages\MessageExample.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\message\_private\Private.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="exception\Error.cs" />
-    <Compile Include="exception\ParamError.cs" />
-    <Compile Include="exception\ParamException.cs" />
-    <Compile Include="exception\RcloudException.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\message\chatroom\Chatroom.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\message\discussion\Discussion.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\message\group\Group.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\message\system\MsgSystem.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="example\conversation\ConversationExample.cs" />
-    <Compile Include="example\group\GagExample.cs" />
-    <Compile Include="example\group\GroupExample.cs" />
-    <Compile Include="example\sensitive\SensitiveExample.cs" />
-    <Compile Include="methods\conversation\Conversation.cs" />
-    <Compile Include="methods\group\gag\Gag.cs" />
-    <Compile Include="methods\group\Group.cs" />
-    <Compile Include="methods\sensitive\SensitiveWord.cs" />
-    <Compile Include="methods\sensitive\Wordfilter.cs" />
-    <Compile Include="models\conversation\ConversationModel.cs" />
-    <Compile Include="models\group\GroupMember.cs" />
-    <Compile Include="models\group\GroupModel.cs" />
-    <Compile Include="models\group\UserGroup.cs" />
-    <Compile Include="models\response\GagGroupUser.cs" />
-    <Compile Include="models\sensitiveword\SensitiveWordModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="models\response\HistoryMessageResult.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\message\history\History.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="methods\chatroom\ban\Ban.cs" />
-    <Compile Include="methods\chatroom\block\Block.cs" />
-    <Compile Include="methods\chatroom\Chatroom.cs" />
-    <Compile Include="methods\chatroom\demotion\Demotion.cs" />
-    <Compile Include="methods\chatroom\distribute\Distribute.cs" />
-    <Compile Include="methods\chatroom\gag\Gag.cs" />
-    <Compile Include="methods\chatroom\keepalive\Keepalive.cs" />
-    <Compile Include="methods\chatroom\whitelist\Messages.cs" />
-    <Compile Include="methods\chatroom\whitelist\User.cs" />
-    <Compile Include="methods\chatroom\whitelist\Whitelist.cs" />
-    <Compile Include="models\chatroom\ChatroomMember.cs" />
-    <Compile Include="models\chatroom\ChatroomModel.cs" />
-    <Compile Include="models\response\ChatroomDemotionMsgResult.cs" />
-    <Compile Include="models\response\ChatroomKeepaliveResult.cs" />
-    <Compile Include="models\response\ChatroomQueryResult.cs" />
-    <Compile Include="models\response\ChatroomUserQueryResult.cs" />
-    <Compile Include="models\response\ChatroomWhitelistMsgResult.cs" />
-    <Compile Include="models\response\CheckChatRoomUserResult.cs" />
-    <Compile Include="models\response\ListBlockChatroomUserResult.cs" />
-    <Compile Include="models\response\ListGagChatroomUserResult.cs" />
-    <Compile Include="models\response\WhiteListResult.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="example\chatroom\BanExample.cs" />
-    <Compile Include="example\chatroom\BlockExample.cs" />
-    <Compile Include="example\chatroom\ChatroomExample.cs" />
-    <Compile Include="example\chatroom\DemotionExample.cs" />
-    <Compile Include="example\chatroom\DistributeExample.cs" />
-    <Compile Include="example\chatroom\GagExample.cs" />
-    <Compile Include="example\chatroom\KeepaliveExample.cs" />
-    <Compile Include="example\chatroom\whitelist\MessageExample.cs" />
-    <Compile Include="example\chatroom\whitelist\UserExample.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
-  <ProjectExtensions>
-    <VisualStudio AllowExistingFolder="true" />
-  </ProjectExtensions>
+
 </Project>
